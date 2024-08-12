@@ -3,11 +3,13 @@ package org.example.pageobjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public abstract class BasePage {
     protected WebDriver driver;
@@ -25,6 +27,11 @@ public abstract class BasePage {
 
     public WebElement findElement(By locator) {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+    public List<WebElement> findElements(By locator) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        return driver.findElements(locator);
     }
 
     public void clickElement(By locator) {
@@ -86,5 +93,21 @@ public abstract class BasePage {
     public WebElement getParent(By locator) {
         WebElement element = driver.findElement(locator);
         return element.findElement(By.xpath(".."));
+    }
+
+    public String getAttributeValue(By locator, String attribute)
+    {
+        return driver.findElement(locator).getAttribute(attribute);
+    }
+
+    public String getCurrentURL()
+    {
+        return driver.getCurrentUrl();
+    }
+
+    public void hover(By locator)
+    {
+        Actions actions = new Actions(driver);
+        actions.moveToElement(findElement(locator)).perform();
     }
 }
