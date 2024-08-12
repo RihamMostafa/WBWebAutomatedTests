@@ -49,7 +49,6 @@ WBWebAutomatedTest/
 ## Setup Instructions
 1. Clone the Repository
     ``` bash
-    Copy code
     git clone https://github.com/yourusername/WBWebAutomatedTest.git
     cd WBWebAutomatedTest
     ```
