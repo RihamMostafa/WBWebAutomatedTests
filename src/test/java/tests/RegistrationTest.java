@@ -83,7 +83,7 @@ public class RegistrationTest extends BaseTest{
     }
 
     @Test
-    public void testRegistration_EmailMissMatch()
+    public void testRegistration_EmailMismatch()
     {
         registrationPage.register(propertyReader.getProperty("validFirstName"),
                 propertyReader.getProperty("validLastName")
@@ -127,7 +127,7 @@ public class RegistrationTest extends BaseTest{
                 ,true,false);
 
         assertEquals(registrationPage.getText(registrationPage.getPasswordError()),
-                "Invalid password");
+                "The password format is invalid.");
     }
 
 
