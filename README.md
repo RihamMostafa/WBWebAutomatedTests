@@ -1,7 +1,7 @@
 # WBWebAutomatedTests
 
 ## Project Overview
-WBWebAutomatedTest is a Selenium-based automated testing project for testing the web application available at https://webook.com/en. The project includes automated tests for registration and search features, ensuring they work correctly across multiple browsers.
+WBWebAutomatedTest is a Selenium-based automated testing project for testing the web application available at https://webook.com/en. The project includes automated tests for registration and search features.
 
 ## Prerequisites
 Before you can run the tests, ensure that you have the following installed:
@@ -76,8 +76,7 @@ To run all tests, use the following Maven command:
     mvn -Dtest=RegistrationTest test
     ```
 ## Reporting
-* Test results are generated in the target/surefire-reports/ directory. You can view these reports to check the status of the tests.
-
+* Test results are generated in the target/surefire-reports/ directory. 
 
 ## Future Enhancements
 * Implement parallel test execution: Run tests in parallel across different browsers.
